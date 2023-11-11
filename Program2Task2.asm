@@ -20,6 +20,7 @@ intro: .asciiz "This program asks the user to input a value for 'x' and 'y'.\nTh
 xvalue: .asciiz "Enter a number for 'x': "
 yvalue: .asciiz "Enter a number for 'y': "
 newline: .asciiz "\n"
+answer_text: .asciiz "'x' to the power of 'y' is: "
 
 .text
 main:
@@ -66,6 +67,11 @@ loop:
 	j loop
 
 answer:
+	# Prints out answer text
+	li $v0, 4
+	la $a0, answer_text
+	syscall
+
 	# Prints out the final answer
 	li $v0, 1
 	move $a0, $s0
