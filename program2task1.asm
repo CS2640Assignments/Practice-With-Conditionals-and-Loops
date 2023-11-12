@@ -1,6 +1,6 @@
 # CS 2640.01
 # October 31, 2023
-# Authors: Damian Varela and Joshua Estrada
+# Authors: Joshua Estrada and Damian Varela
 # Github Repo Link: https://github.com/CS2640Assignments/Practice-With-Conditionals-and-Loops
 
 .data
@@ -10,7 +10,7 @@ score_prompt: .asciiz "Please enter a score as an integer value: "
 new_score_prompt: .asciiz "Would you like to enter a new score?\n(Y)Yes  (N)No\n\nEnter 'Y' or 'N' for your selection: "
 line_break: .asciiz "-------------------------------------------------------------------\n"
 error1: .asciiz "Invalid Input\n"
-error2: .asciiz "Grades can only be between 0 and 100.\n"
+error2: .asciiz "Grades cannot be less than 0.\n"
 
 exit_text: .asciiz "The program will now exit.\n"
 newline: .asciiz "\n"
@@ -81,7 +81,7 @@ loop:
 	
 	# prints error and reprompts if input not between 0 and 100
 	blt $s0, 0, bad_grade
-	bgt $s0, 100, bad_grade
+	# bgt $s0, 100, bad_grade
 	
 	# print the corresponding letter grade
 	bge $s0, 90, print_a # 90 and up is an A
