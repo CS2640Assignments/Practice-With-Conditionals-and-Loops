@@ -1,4 +1,4 @@
-# CS 2640.01
+# CS 2640.01 program 2
 # October 31, 2023
 # Authors: Joshua Estrada and Damian Varela
 # Github Repo Link: https://github.com/CS2640Assignments/Practice-With-Conditionals-and-Loops
